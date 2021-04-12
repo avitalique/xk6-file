@@ -14,10 +14,24 @@ func init() {
 	modules.Register("k6/x/file", new(FILE))
 }
 
-// FILE is the k6 extension.
+// FILE is the k6 extension
 type FILE struct{}
 
-// Append a string to file
+// Write string to file
+func (*FILE) WriteString(path string, s string) error {
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	if _, err := f.WriteString(s); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Append string to file
 func (*FILE) AppendString(path string, s string) error {
 	f, err := os.OpenFile(path,
 		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
