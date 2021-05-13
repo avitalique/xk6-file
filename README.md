@@ -1,10 +1,10 @@
 # xk6-file
-[k6](https://github.com/loadimpact/k6) extension for writing files, implemented using the 
+[k6](https://go.k6.io/k6) extension for writing files, implemented using the
 [xk6](https://github.com/k6io/xk6) system.
 
 ## Build
 ```shell
-xk6 build v0.31.1 --with github.com/avitalique/xk6-file
+xk6 build --with github.com/avitalique/xk6-file@latest
 ```
 
 ## Example
