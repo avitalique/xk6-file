@@ -1,6 +1,6 @@
 # xk6-file
-[k6](https://go.k6.io/k6) extension for writing files, implemented using the
-[xk6](https://github.com/k6io/xk6) system.
+[k6](https://github.com/grafana/k6) extension for writing files, implemented using the
+[xk6](https://github.com/grafana/xk6) system.
 
 ## Build
 ```shell
