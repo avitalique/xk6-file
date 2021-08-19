@@ -18,3 +18,8 @@ export default function () {
     file.appendString(filepath, `Second line. VU: ${__VU}  -  ITER: ${__ITER}`);
 }
 ```
+
+## Run sample script
+```shell
+./k6 run sample-script.js
+```
