@@ -45,3 +45,12 @@ func (*FILE) AppendString(path string, s string) error {
 	}
 	return nil
 }
+
+func (*FILE) WriteBytes(path string, b []byte) error {
+	err := os.WriteFile(path, b, 0644)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
