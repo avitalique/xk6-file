@@ -49,12 +49,15 @@ func (*FILE) AppendString(path string, s string) error {
 
 // ClearFile removes all the contents of a file
 func (*FILE) ClearFile(path string) error {
-	f, err := os.Create(path)
+	f, err := os.OpenFile(path, os.O_RDWR, 0644)
 	if err != nil {
 		return err
 	}
 	defer f.Close()
 
+	if err := f.Truncate(0); err != nil {
+		return err
+	}
 	return nil
 }
 
