@@ -9,6 +9,10 @@ export default function () {
     file.writeString(filepath, 'New file. First line.\n');
     file.appendString(filepath, `Second line. VU: ${__VU}  -  ITER: ${__ITER}`);
 
+    file.removeRowsBetweenValues(filepath, 2, 2);
+    file.clearFile(filepath);
+    file.deleteFile(filepath);
+  
     let response = http.get("https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg", {
         responseType: "binary",
     });
