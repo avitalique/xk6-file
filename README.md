@@ -38,5 +38,5 @@ export default function () {
 
 ## Run sample script
 ```shell
-./k6 run sample-script.js
+./k6 run examples/sample-script.js
 ```
