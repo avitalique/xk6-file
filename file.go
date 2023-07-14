@@ -5,9 +5,9 @@
 package file
 
 import (
-	"os"
 	"bufio"
-	
+	"os"
+
 	"go.k6.io/k6/js/modules"
 )
 
@@ -18,7 +18,7 @@ func init() {
 // FILE is the k6 extension
 type FILE struct{}
 
-// Write string to file
+// WriteString writes string to file
 func (*FILE) WriteString(path string, s string) error {
 	f, err := os.Create(path)
 	if err != nil {
@@ -32,7 +32,7 @@ func (*FILE) WriteString(path string, s string) error {
 	return nil
 }
 
-// Append string to file
+// AppendString appends string to file
 func (*FILE) AppendString(path string, s string) error {
 	f, err := os.OpenFile(path,
 		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -47,12 +47,12 @@ func (*FILE) AppendString(path string, s string) error {
 	return nil
 }
 
+// WriteBytes writes binary file
 func (*FILE) WriteBytes(path string, b []byte) error {
 	err := os.WriteFile(path, b, 0644)
 	if err != nil {
 		return err
 	}
-
 	return nil
 }
 
@@ -70,7 +70,7 @@ func (*FILE) ClearFile(path string) error {
 	return nil
 }
 
-// DeleteFile delete file
+// DeleteFile deletes file
 func (*FILE) DeleteFile(path string) error {
 	err := os.Remove(path)
 	if err != nil {
