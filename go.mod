@@ -1,6 +1,6 @@
 module github.com/avitalique/xk6-file
 
-go 1.19
+go 1.20
 
 require go.k6.io/k6 v0.45.1
 
