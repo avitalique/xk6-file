@@ -32,6 +32,9 @@ export default function () {
     });
     check(response, { 'status was 200': response.status === 200 });
     file.writeBytes(binaryFilepath, Array.from(new Uint8Array(response.body)));
+    
+    // Rename file
+    file.renameFile(binaryFilepath, 'renamed-image.jpg')
 }
 
 ```
