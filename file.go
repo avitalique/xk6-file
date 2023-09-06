@@ -70,6 +70,15 @@ func (*FILE) ClearFile(path string) error {
 	return nil
 }
 
+// RenameFile renames file from oldPath to newPath
+func (FILE) RenameFile(oldPath string, newPath string) error {
+	err := os.Rename(oldPath, newPath)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 // DeleteFile deletes file
 func (*FILE) DeleteFile(path string) error {
 	err := os.Remove(path)
