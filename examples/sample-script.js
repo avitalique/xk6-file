@@ -9,6 +9,13 @@ export default function () {
     // Write/append string to file
     file.writeString(filepath, 'New file. First line.\n');
     file.appendString(filepath, `Second line. VU: ${__VU}  -  ITER: ${__ITER}`);
+    const fileContet = file.readFile(filepath);
+    
+    check(fileContet, {
+        "file content is correct": (content) =>
+          content.includes("New file. First line.") &&
+          content.includes(`Second line. VU: ${__VU}  -  ITER: ${__ITER}`),
+    });
 
     // Remove rows from text file/clear file content/delete file
     file.removeRowsBetweenValues(filepath, 2, 2);
