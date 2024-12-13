@@ -6,6 +6,7 @@ package file
 
 import (
 	"bufio"
+	"io"
 	"os"
 
 	"go.k6.io/k6/js/modules"
@@ -130,4 +131,20 @@ func (*FILE) RemoveRowsBetweenValues(path string, start, end int) error {
 		return err
 	}
 	return nil
+}
+
+// ReadFile reads the contents of a file and returns it as a string
+func (*FILE) ReadFile(path string) (string, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return "", err
+	}
+	defer f.Close()
+
+	// Read the file contents
+	content, err := io.ReadAll(f)
+	if err != nil {
+		return "", err
+	}
+	return string(content), nil
 }
