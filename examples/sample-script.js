@@ -4,6 +4,7 @@ import file from 'k6/x/file';
 
 const filepath = 'sample-output.txt';
 const binaryFilepath = 'sample-image.jpg';
+const dirPath = 'test-dir';
 
 export default function () {
     // Write/append string to file
@@ -31,4 +32,29 @@ export default function () {
 
     // Rename file
     file.renameFile(binaryFilepath, 'renamed-image.jpg')
+
+    // Create a directory
+    file.createDirectory(dirPath);
+
+    // Verify directory creation
+    check(file.writeString(`${dirPath}/test-file.txt`, "Testing directory creation.") === undefined, {
+        "directory created": (result) => result,
+    });
+    
+    // Verify directory deletion
+    file.deleteDirectory(dirPath);
+    
+    check(
+        (() => {
+            try {
+                file.writeString(`${dirPath}/test-file.txt`, "This should fail.");
+                return false;
+            } catch (e) {
+                return true;
+            }
+        })(),
+        {
+            "directory deleted": (result) => result,
+        }
+    );
 }
