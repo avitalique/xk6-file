@@ -148,3 +148,21 @@ func (*FILE) ReadFile(path string) (string, error) {
 	}
 	return string(content), nil
 }
+
+// CreateDirectory creates a new directory at the specified path
+func (*FILE) CreateDirectory(path string) error {
+	err := os.MkdirAll(path, 0o755)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+// DeleteDirectory deletes the directory at the specified path
+func (*FILE) DeleteDirectory(path string) error {
+	err := os.RemoveAll(path)
+	if err != nil {
+		return err
+	}
+	return nil
+}
