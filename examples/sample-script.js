@@ -10,9 +10,10 @@ export default function () {
     // Write/append string to file
     file.writeString(filepath, 'New file. First line.\n');
     file.appendString(filepath, `Second line. VU: ${__VU}  -  ITER: ${__ITER}`);
-    const fileContet = file.readFile(filepath);
-    
-    check(fileContet, {
+
+    // Read file
+    const fileContent = file.readFile(filepath);
+    check(fileContent, {
         "file content is correct": (content) =>
           content.includes("New file. First line.") &&
           content.includes(`Second line. VU: ${__VU}  -  ITER: ${__ITER}`),
@@ -33,17 +34,14 @@ export default function () {
     // Rename file
     file.renameFile(binaryFilepath, 'renamed-image.jpg')
 
-    // Create a directory
+    // Create directory
     file.createDirectory(dirPath);
-
-    // Verify directory creation
     check(file.writeString(`${dirPath}/test-file.txt`, "Testing directory creation.") === undefined, {
         "directory created": (result) => result,
     });
     
-    // Verify directory deletion
+    // Delete directory
     file.deleteDirectory(dirPath);
-    
     check(
         (() => {
             try {
