@@ -2,7 +2,7 @@ module github.com/avitalique/xk6-file
 
 go 1.25.0
 
-require go.k6.io/k6 v1.6.1
+require go.k6.io/k6 v1.7.1
 
 require (
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
@@ -42,7 +42,7 @@ require (
 	golang.org/x/time v0.14.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260223185530-2f722ef697dc // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260223185530-2f722ef697dc // indirect
-	google.golang.org/grpc v1.79.1 // indirect
+	google.golang.org/grpc v1.79.3 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/guregu/null.v3 v3.5.0 // indirect
 )
