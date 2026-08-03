@@ -4,7 +4,7 @@
 
 ## Build
 ```shell
-xk6 build v2.1.0 --with github.com/avitalique/xk6-file@latest
+xk6 build v2.1.0 --with github.com/avitalique/xk6-file@v1.7.0
 ```
 
 ## Example
