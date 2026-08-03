@@ -1,6 +1,6 @@
 module github.com/avitalique/xk6-file
 
-go 1.25.0
+go 1.26.5
 
 require go.k6.io/k6/v2 v2.1.0
 
@@ -10,6 +10,7 @@ require (
 	github.com/dlclark/regexp2 v1.12.0 // indirect
 	github.com/evanw/esbuild v0.28.0 // indirect
 	github.com/fatih/color v1.19.0 // indirect
+	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-sourcemap/sourcemap v2.1.4+incompatible // indirect
@@ -17,13 +18,9 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grafana/sobek v0.0.0-20260429085637-a66d4790012b // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.29.0 // indirect
-	github.com/josharian/intern v1.0.0 // indirect
-	github.com/mailru/easyjson v0.9.1 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
 	github.com/mattn/go-isatty v0.0.22 // indirect
 	github.com/mstoykov/atlas v0.0.0-20220811071828-388f114305dd // indirect
-	github.com/onsi/ginkgo v1.16.5 // indirect
-	github.com/onsi/gomega v1.39.1 // indirect
 	github.com/serenize/snaker v0.0.0-20201027110005-a7ad2135616e // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/spf13/afero v1.1.2 // indirect
@@ -45,4 +42,5 @@ require (
 	google.golang.org/grpc v1.81.1 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/guregu/null.v3 v3.3.0 // indirect
+	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 )
