@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 env:
-  K6_VERSION: v2.1.0
+  K6_VERSION: v2.2.0
   XK6_VERSION: latest
 
 jobs:
